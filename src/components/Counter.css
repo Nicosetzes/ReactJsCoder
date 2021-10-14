@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.counter {
+    border: 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2em auto;
+    width: 50%;
+}
+
+.counter button {
+    margin: 0 1em;
+    padding: 0.5em;
+    width: 2em;
+}

@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.cartContainer {
+    align-items: center;
+    background-color: #928a8a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .5em;
+    width: 100px;
+}
+
+.cartContainer .cart {
+    display: block;
+    height: 1.25em;
+    width: 1.25em;
+}
