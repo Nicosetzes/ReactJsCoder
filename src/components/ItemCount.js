@@ -1,13 +1,14 @@
-export const ItemCount = ({ value, stock, onAdd, onSubstract }) => {
+export const ItemCount = ({onAdd, value, stock, add, remove }) => {
     return (
         <div className="counterContainer">
             <div className="counter">
-                <button onClick={onSubstract}>-</button>
+                <button onClick={remove}>-</button>
                 <span>{value}</span>
-                <button onClick={onAdd}>+</button>
+                <button onClick={add}>+</button>
             </div>
-            <button className="addProducts">Agregar al carrito</button>
+            <button className="addProducts" onClick={() => onAdd(value)}>Agregar al carrito</button>
             <span>Stock: {stock}</span>
         </div>
     )
 }
+

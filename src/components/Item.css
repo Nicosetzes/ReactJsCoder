@@ -1,0 +1,34 @@
+.itemBody {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    justify-content: center;
+    margin: 1.5em 1em;
+    outline: red 1px solid;
+    padding: 1.5em;
+    width: 400px;
+}
+
+.itemBody h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+}
+
+.itemBody div {
+    align-items: center;
+    background-color: teal;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    width: 75%;
+}
+
+.itemBody span {
+    margin: 1em 0 0 0;
+}
+
+.itemBody p {
+    margin: 1em 0 0 0;
+}
