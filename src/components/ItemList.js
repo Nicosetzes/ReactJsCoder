@@ -1,12 +1,42 @@
-import { Item } from './Item'
-import './Item.css'
+import { Item } from "./Item";
+import "./Item.css";
+import "./ItemList.css";
+
+import { useState } from "react";
+import { useEffect } from "react";
+import { productsList } from "../products";
 
 export const ItemList = () => {
-    return (
-        <>
-            <Item title="Producto uno"/>
-            <Item title="Producto dos" />
-            <Item title="Producto tres"/>
-        </>
-    )
-}
+  const [stock, setStock] = useState(null);
+
+  // PROMISES
+
+  useEffect(() => {
+    const task = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("Esto emula la importación del stock");
+      }, 2000);
+    });
+
+    task.then(
+      (result) => {
+        console.log(result);
+        setStock(productsList);
+      },
+      (err) => {
+        console.log(`El error es ${err}`);
+      }
+    );
+  }, []);
+
+  return (
+    <>
+      <div className="itemListGroup">
+        {stock &&
+          stock.map((element) => {
+            return <Item item={element} />;
+          })}
+      </div>
+    </>
+  );
+};

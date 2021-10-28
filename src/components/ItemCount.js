@@ -1,3 +1,5 @@
+import "./ItemCount.css";
+
 export const ItemCount = ({ onAdd, value, stock, add, remove }) => {
   return (
     <div className="counterContainer">
