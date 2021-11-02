@@ -1,5 +1,6 @@
 .itemBody {
     align-items: center;
+    background-color: #d7d7d7;
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
@@ -11,23 +12,22 @@
 }
 
 .itemBody h3 {
+    color: #000;
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0 0 1em 0;
 }
 
-.itemBody div {
-    align-items: center;
-    display: flex;
-    height: 200px;
-    justify-content: center;
-    width: 75%;
-}
-
 .itemBody span {
+    color: #000;
     margin: 0;
 }
 
 .itemBody p {
+    color: #000;
     margin: 1em 0 0 0;
+}
+
+.itemBody img {
+    width: 80%;
 }

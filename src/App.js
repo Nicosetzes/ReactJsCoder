@@ -3,6 +3,7 @@ import { NavBar } from "./components/NavBar";
 import "./components/NavBar.css";
 import { ItemListContainer } from "./components/ItemListContainer";
 import "./components/ItemListContainer.css";
+import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/">
             <main>
               <ItemListContainer greeting="JSX" />
+              <ItemDetailContainer />
             </main>
           </Route>
         </Switch>

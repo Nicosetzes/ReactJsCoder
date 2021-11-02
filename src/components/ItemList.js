@@ -20,7 +20,6 @@ export const ItemList = () => {
 
     task.then(
       (result) => {
-        console.log(result);
         setStock(productsList);
       },
       (err) => {
@@ -34,7 +33,7 @@ export const ItemList = () => {
       <div className="itemListGroup">
         {stock &&
           stock.map((element) => {
-            return <Item item={element} />;
+            return <Item item={element} key={element.id} />;
           })}
       </div>
     </>

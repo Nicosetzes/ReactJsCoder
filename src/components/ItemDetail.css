@@ -1,0 +1,94 @@
+.itemBody .seeDetails {
+    border: 0;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    margin: 1em 0;
+    outline: rgb(91, 120, 250) 2px solid;
+    padding: 1em 1em;
+    width: 150px;
+}
+
+.modalContainer {
+    align-items: center;
+    background-color: aliceblue;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    left: 0%;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0%;
+    transition: opacity 100ms ease-in-out;
+    width: 100vw;
+}
+
+.modalContainer.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.modalContainer .modal {
+    background-color: #fff;
+    border: #138a64 3px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 1.5em 2.5em;
+    text-align: center;
+    width: 50%;
+}
+
+.modalContainer .modal .modal__innerCont {
+    display: flex;
+    flex-direction: row;
+    margin: 2rem 0;
+}
+
+.modalContainer .modal .modal__innerCont img {
+    margin: 0 1.5em;
+    width: 35%;
+}
+
+.modalContainer .modal .modal__innerCont p {
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.modalContainer .modal button {
+    background-color: #138a64;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 10em;        
+}
+
+.modalContainer .modal h3 {
+    margin: 0;
+}
+
+.modalContainer .modal p {
+    font-size: 1rem;
+    margin: 0 0 1em 0;
+    opacity: 0.8;
+}
+
+.modalContainer .modal .condition {
+    padding: 1em;
+}
+
+.modalContainer .modal .price {
+    font-weight: 700;
+    padding: 0 1em 1em 1em;
+}
+
+.modalContainer .modal .publisher {
+    outline:rgb(91, 120, 250) 2px solid;
+    padding: 1em;
+}
+
