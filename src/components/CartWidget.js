@@ -1,5 +1,6 @@
 import logo from "../media/cart.svg";
 import { Link } from "react-router-dom";
+import "./CartWidget.css";
 
 export const CartWidget = () => {
   return (

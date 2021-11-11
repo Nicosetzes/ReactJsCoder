@@ -1,0 +1,13 @@
+.backHome button {
+    background-color: #becfca;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 1em 2em;
+    width: 10em;
+}
+
+.backHome button a {
+    color: #000
+}

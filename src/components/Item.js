@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ItemCount } from "./ItemCount";
 import { Link } from "react-router-dom";
+import "./Item.css";
 
 export const Item = ({ item }) => {
   const stock = 10;
@@ -8,6 +9,8 @@ export const Item = ({ item }) => {
   const [count, setCount] = useState(1);
 
   const [productsQty, setProductsQty] = useState(null);
+
+  const [showItemCount, setShowItemCount] = useState(true);
 
   const add = () => {
     if (count >= stock) {
@@ -24,10 +27,14 @@ export const Item = ({ item }) => {
   };
 
   const onAdd = (quantityAdded) => {
-    console.log(quantityAdded);
     setProductsQty(quantityAdded);
+    setShowItemCount(false);
     console.log(productsQty);
   };
+
+  useEffect(() => {
+    setProductsQty(count);
+  }, [count]);
 
   return (
     <div className="itemBody">
@@ -43,6 +50,7 @@ export const Item = ({ item }) => {
         stock={10}
         add={add}
         remove={remove}
+        show={showItemCount}
         onAdd={onAdd}
       />
     </div>

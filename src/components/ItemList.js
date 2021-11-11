@@ -1,10 +1,5 @@
 import { Item } from "./Item";
-import "./Item.css";
 import "./ItemList.css";
-// import { useState } from "react";
-// import { useEffect } from "react";
-// import { productsList } from "../products";
-// import { useParams } from "react-router-dom";
 
 export const ItemList = ({ items }) => {
   return (

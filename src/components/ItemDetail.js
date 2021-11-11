@@ -1,5 +1,3 @@
-// import { ItemCount } from "./ItemCount";
-
 import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 

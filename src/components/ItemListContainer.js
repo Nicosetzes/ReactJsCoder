@@ -2,6 +2,7 @@ import { ItemList } from "./ItemList";
 import { useState, useEffect } from "react";
 import { productsList } from "../products";
 import { useParams } from "react-router-dom";
+import "./ItemListContainer.css";
 
 export const ItemListContainer = () => {
   const [stock, setStock] = useState(null);
