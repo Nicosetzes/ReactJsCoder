@@ -32,8 +32,16 @@
     flex-direction: row;
 }
 
-.counter button {
+.counter .addButton {
     margin: 0 1em;
+    outline: #000 2px solid;
+    padding: 0.5em;
+    width: 2em;
+}
+
+.counter .removeButton {
+    margin: 0 1em;
+    outline: #000 2px solid;
     padding: 0.5em;
     width: 2em;
 }

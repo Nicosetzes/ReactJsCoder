@@ -1,41 +1,21 @@
 import { Item } from "./Item";
 import "./Item.css";
 import "./ItemList.css";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import { productsList } from "../products";
+// import { useParams } from "react-router-dom";
 
-import { useState } from "react";
-import { useEffect } from "react";
-import { productsList } from "../products";
-
-export const ItemList = () => {
-  const [stock, setStock] = useState(null);
-
-  // PROMISES
-
-  useEffect(() => {
-    const task = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("Esto emula la importación del stock");
-      }, 2000);
-    });
-
-    task.then(
-      (result) => {
-        setStock(productsList);
-      },
-      (err) => {
-        console.log(`El error es ${err}`);
-      }
-    );
-  }, []);
-
+export const ItemList = ({ items }) => {
   return (
-    <>
-      <div className="itemListGroup">
-        {stock &&
-          stock.map((element) => {
-            return <Item item={element} key={element.id} />;
-          })}
-      </div>
-    </>
+    <div className="itemListGroup">
+      {items ? (
+        items.map((element) => {
+          return <Item item={element} key={element.id} />;
+        })
+      ) : (
+        <h1>Se están cargando los productos, aguarde...</h1>
+      )}
+    </div>
   );
 };

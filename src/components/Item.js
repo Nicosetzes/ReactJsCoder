@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { ItemCount } from "./ItemCount";
+import { Link } from "react-router-dom";
 
 export const Item = ({ item }) => {
   const stock = 10;
 
   const [count, setCount] = useState(1);
+
+  const [productsQty, setProductsQty] = useState(null);
 
   const add = () => {
     if (count >= stock) {
@@ -20,10 +23,10 @@ export const Item = ({ item }) => {
     }
   };
 
-  const onAdd = (x) => {
-    const productsQty = x;
+  const onAdd = (quantityAdded) => {
+    console.log(quantityAdded);
+    setProductsQty(quantityAdded);
     console.log(productsQty);
-    document.getElementById("productsQty").innerHTML = productsQty;
   };
 
   return (
@@ -32,6 +35,9 @@ export const Item = ({ item }) => {
       <img alt={item.alt} src={item.image} />
       <span>Editorial: {item.publisher}</span>
       <span>${item.price}</span>
+      <button>
+        <Link to={`/item/${item.id}`}>Ver detalles del producto</Link>
+      </button>
       <ItemCount
         value={count}
         stock={10}

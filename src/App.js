@@ -4,6 +4,7 @@ import "./components/NavBar.css";
 import { ItemListContainer } from "./components/ItemListContainer";
 import "./components/ItemListContainer.css";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
+import { Cart } from "./components/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -15,10 +16,16 @@ function App() {
         </header>
         <Switch>
           <Route exact path="/">
-            <main>
-              <ItemListContainer greeting="JSX" />
-              <ItemDetailContainer />
-            </main>
+            <ItemListContainer greeting="JSX" />
+          </Route>
+          <Route exact path="/category/:categoryId">
+            <ItemListContainer greeting="JSX" />
+          </Route>
+          <Route exact path="/item/:itemId">
+            <ItemDetailContainer />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
           </Route>
         </Switch>
       </div>

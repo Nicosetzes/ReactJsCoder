@@ -1,5 +1,6 @@
 // import { ItemCount } from "./ItemCount";
 
+import { Link } from "react-router-dom";
 import "./ItemDetail.css";
 
 const seeDetails = () => {
@@ -19,8 +20,9 @@ export const ItemDetail = ({ item }) => {
       <img alt={item.alt} src={item.image} />
       <span>Editorial: {item.publisher}</span>
       <span>${item.price}</span>
-      <button className="seeDetails" onClick={() => seeDetails()}>
-        Ver descripción
+      <button onClick={() => seeDetails()}>Ver descripción</button>
+      <button>
+        <Link to={"/"}>Volver</Link>
       </button>
       <div id="itemDetailModal" className="modalContainer">
         <div className="modal">

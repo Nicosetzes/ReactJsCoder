@@ -11,6 +11,21 @@
     width: 400px;
 }
 
+.itemBody button {
+    border: 0;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    margin: 1em 0;
+    outline: rgb(91, 120, 250) 2px solid;
+    padding: 1em 1em;
+    width: 150px;
+}
+
+.itemBody button a {
+    color: #000;
+}
+
 .itemBody h3 {
     color: #000;
     font-size: 1.5rem;

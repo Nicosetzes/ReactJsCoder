@@ -1,31 +1,23 @@
-import { useState } from "react";
-import { useEffect } from "react";
-
+import { useState, useEffect } from "react";
 import { productsList } from "../products";
-
 import { ItemDetail } from "./ItemDetail";
-
 import "./ItemDetailContainer.css";
+import { useParams } from "react-router-dom";
 
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
 
-  useEffect(() => {
-    const task = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("Esto emula la importación de un único producto");
-      }, 2000);
-    });
+  const { itemId } = useParams();
 
-    task.then(
-      (result) => {
-        setProduct(productsList[2]);
-      },
-      (err) => {
-        console.log(`El error es ${err}`);
-      }
+  useEffect(() => {
+    const numberedItemId = Number(itemId);
+    const filtered = productsList.filter(
+      (product) => product.id === numberedItemId
     );
-  }, []);
+    setProduct(filtered[0]);
+    console.log(product);
+  }, [itemId, product]);
+
   return (
     <>
       <div className="itemDetailContainer">
