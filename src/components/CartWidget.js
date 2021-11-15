@@ -1,13 +1,15 @@
 import logo from "../media/cart.svg";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 import "./CartWidget.css";
 
 export const CartWidget = () => {
+  const cart = useCart();
   return (
     <Link to={`/cart`}>
       <div className="cartContainer">
         <img className="cart" alt="cart" src={logo} />
-        <span id="productsQty">0</span>
+        <span id="productsQty">{cart.cartQty}</span>
       </div>
     </Link>
   );

@@ -1,3 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
 .App {
   background-color: #282c34;
   min-height: 100vh;
@@ -6,7 +20,7 @@
   align-items: center;
   justify-content: stretch;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #000;
 }
 
 .App-header {

@@ -1,47 +1,64 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.counterContainer {
+.cont__bottom {
     align-items: center;
-    border: 0;
-    border-radius: 5px;
+    border: teal 2px solid;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 1.5em auto;
-    text-align: center;
-    width: 30%;
+    margin: 1rem 0;
+    padding: 1rem;
+    width: 50%;
 }
 
-.counterContainer .addProducts {
+.cont__bottom button {
     border: 0;
     border-radius: 5px;
     color: #000;
     cursor: pointer;
-    margin: 1em 0;
+    margin-top: 0.75rem; 
     outline: purple 2px solid;
     padding: 1em 1em;
-    width: 150px;
 }
 
-.counter {
+.cont__bottom .cont__bottom-counter {
+    align-items: center;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
-.counter .addButton {
-    margin: 0 1em;
-    outline: #000 2px solid;
-    padding: 0.5em;
-    width: 2em;
+.cont__bottom .cont__bottom-counter button {
+    align-items: center;
+    border: 0;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem;
+    outline: purple 2px solid;
+    padding: 1em 1em;
 }
 
-.counter .removeButton {
-    margin: 0 1em;
-    outline: #000 2px solid;
-    padding: 0.5em;
-    width: 2em;
+.cont__bottom .cont__bottom-counter span {
+    color: #000;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0;
+}
+
+.cont__bottom h3 {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 1em 0;
+}
+
+.cont__bottom p {
+    color: #000;
+    margin: 1em 0 0 0;
+}
+
+
+.cont__bottom button a {
+    color: #000;
 }

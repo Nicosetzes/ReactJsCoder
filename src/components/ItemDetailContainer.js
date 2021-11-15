@@ -15,7 +15,6 @@ export const ItemDetailContainer = () => {
       (product) => product.id === numberedItemId
     );
     setProduct(filtered[0]);
-    console.log(product);
   }, [itemId, product]);
 
   return (

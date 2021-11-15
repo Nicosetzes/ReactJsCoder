@@ -19,9 +19,6 @@ export const NavBar = () => {
           <Link to={`/category/historia`}>Historia</Link>
         </li>
       </ul>
-      <div className="login">
-        <button>Login</button>
-      </div>
       <CartWidget />
     </nav>
   );
