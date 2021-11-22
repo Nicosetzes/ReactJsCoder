@@ -5,15 +5,15 @@ const CartContext = createContext();
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+
+  const [cartQty, setCartQty] = useState(0);
+
   const [itemCountStatus, setItemCountStatus] = useState(true);
 
   const displayItemCount = () => {
     setItemCountStatus(!itemCountStatus);
   };
-
-  const [cart, setCart] = useState([]);
-
-  const [cartQty, setCartQty] = useState(0);
 
   const addItem = (item, quantity) => {
     if (quantity >= 1 && item.stock > 0) {
@@ -67,6 +67,11 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  const updateCartQty = () => {
+    const totalAmount = cart.map((element) => element.quantity);
+    setCartQty(totalAmount.reduce((a, b) => a + b));
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -78,6 +83,7 @@ export const CartProvider = ({ children }) => {
         removeItem,
         clearItems,
         isItemInCart,
+        updateCartQty,
       }}
     >
       {children}

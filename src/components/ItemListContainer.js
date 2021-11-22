@@ -19,7 +19,7 @@ export const ItemListContainer = () => {
         } else {
           reject("There's no dataBase available");
         }
-      }, 2000);
+      }, 500);
     })
       .then((result) => setStock(result))
       .catch((err) => console.log(err));
