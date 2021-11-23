@@ -38,7 +38,6 @@ export const ItemDetail = ({ item }) => {
             <span className="publisher">Editorial: {item.publisher}</span>
             <span className="condition">Estado: {item.condition}</span>
             <span className="price">${item.price}</span>
-            <span>Cantidad de productos total: {cart.cartQty}</span>
           </div>
           <div className="cont__bottom">
             <ItemCount
@@ -81,7 +80,6 @@ export const ItemDetail = ({ item }) => {
             <span className="publisher">Editorial: {item.publisher}</span>
             <span className="condition">Estado: {item.condition}</span>
             <span className="price">${item.price}</span>
-            <span>Cantidad de productos total: {cart.cartQty}</span>
           </div>
           <div className="cont__bottom">
             <ItemCount

@@ -11,6 +11,7 @@ export const ItemCount = ({
   displayItemCount,
   removeItem,
 }) => {
+
   if (itemCountStatus === true) {
     return (
       <>

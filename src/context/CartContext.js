@@ -69,7 +69,9 @@ export const CartProvider = ({ children }) => {
 
   const updateCartQty = () => {
     const totalAmount = cart.map((element) => element.quantity);
-    setCartQty(totalAmount.reduce((a, b) => a + b));
+    console.log(totalAmount)
+    totalAmount.length >= 1 ? setCartQty(totalAmount.reduce((a, b) => a + b)) : setCartQty(0)
+    setItemCountStatus(true) 
   };
 
   return (

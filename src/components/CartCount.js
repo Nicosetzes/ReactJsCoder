@@ -7,24 +7,6 @@ export const CartCount = ({ item }) => {
 
   const [productQty, setProductQty] = useState(item.quantity);
 
-  // const addItem = (item, quantity) => {
-  //   if (quantity >= 1 && item.stock > 0) {
-  //     const productToAdd = { ...item, quantity: quantity };
-  //     const productFoundArray = cart.filter(
-  //       (element) => element.id === item.id
-  //     );
-
-  //     if (productFoundArray.length === 0) {
-  //       setCart([...cart, productToAdd]);
-  //     } else {
-  //       const auxCart = [...cart];
-  //       productFoundArray[0].quantity += quantity;
-  //       setCart(auxCart);
-  //     }
-  //     displayItemCount();
-  //   }
-  // };
-
   const addOnCart = () => {
     if (productQty < item.stock) {
       setProductQty(productQty + 1);
@@ -43,22 +25,16 @@ export const CartCount = ({ item }) => {
       let index = cart.cart.findIndex((element) => element.id === item.id);
       cart.cart[index].quantity--;
       cart.updateCartQty();
-      console.log(cart.cartQty);
     }
   };
 
   const removeItemFromCounter = () => {
     let index = cart.cart.findIndex((element) => element.id === item.id);
     cart.cart.splice(index, 1);
-    cart.updateCartQty();
+    cart.updateCartQty()
   };
 
   console.log(cart.cart);
-
-  // var myFish = ['angel', 'clown', 'drum', 'mandarin', 'sturgeon'];
-  // var removed = myFish.splice(3, 1);
-
-  // removed is ["mandarin"]
 
   return (
     <>
