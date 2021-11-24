@@ -6,8 +6,6 @@ import { ItemList } from "./ItemList";
 export const ItemListContainer = () => {
   const database = useDatabase();
 
-  console.log(database.stock);
-
   const { categoryId } = useParams();
 
   if (!categoryId) {

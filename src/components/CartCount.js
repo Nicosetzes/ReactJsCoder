@@ -13,7 +13,6 @@ export const CartCount = ({ item }) => {
       const index = cart.cart.findIndex((element) => element.id === item.id);
       cart.cart[index].quantity++;
       cart.updateCartQty();
-      console.log(cart.cartQty);
     } else {
       alert("No hay stock");
     }
@@ -31,10 +30,8 @@ export const CartCount = ({ item }) => {
   const removeItemFromCounter = () => {
     let index = cart.cart.findIndex((element) => element.id === item.id);
     cart.cart.splice(index, 1);
-    cart.updateCartQty()
+    cart.updateCartQty();
   };
-
-  console.log(cart.cart);
 
   return (
     <>

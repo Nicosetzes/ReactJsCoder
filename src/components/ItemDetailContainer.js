@@ -9,8 +9,6 @@ export const ItemDetailContainer = () => {
 
   const database = useDatabase();
 
-  console.log(database.stock);
-
   const { itemId } = useParams();
 
   useEffect(() => {

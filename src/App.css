@@ -27,6 +27,10 @@ ul {
   width: 100%;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 main {
   display: flex;
   flex-direction: column;

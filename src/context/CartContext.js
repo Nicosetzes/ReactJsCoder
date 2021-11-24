@@ -35,11 +35,8 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  console.log(cart, cartQty);
-
   const removeItem = (item) => {
     const cartFiltered = cart.filter((element) => element.id !== item.id);
-    console.log(cartFiltered);
     setCart(cartFiltered);
     if (cartFiltered.length === 0) {
       setCartQty(0);
@@ -57,7 +54,6 @@ export const CartProvider = ({ children }) => {
   const clearItems = () => {
     setCart([]);
     setCartQty(0);
-    console.log(cart);
   };
 
   const isItemInCart = (item) => {
@@ -71,7 +67,6 @@ export const CartProvider = ({ children }) => {
 
   const updateCartQty = () => {
     const totalAmount = cart.map((element) => element.quantity);
-    console.log(totalAmount);
     totalAmount.length >= 1
       ? setCartQty(totalAmount.reduce((a, b) => a + b))
       : setCartQty(0);
@@ -82,7 +77,6 @@ export const CartProvider = ({ children }) => {
     const totalCashCalculation = cart.map(
       (element) => element.quantity * element.price
     );
-    console.log(totalCashCalculation);
     totalCashCalculation.length >= 1
       ? setTotalCash(totalCashCalculation.reduce((a, b) => a + b))
       : setTotalCash(0);
