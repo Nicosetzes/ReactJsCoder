@@ -9,6 +9,8 @@ export const CartProvider = ({ children }) => {
 
   const [cartQty, setCartQty] = useState(0);
 
+  const [totalCash, setTotalCash] = useState(0);
+
   const [itemCountStatus, setItemCountStatus] = useState(true);
 
   const displayItemCount = () => {
@@ -69,9 +71,21 @@ export const CartProvider = ({ children }) => {
 
   const updateCartQty = () => {
     const totalAmount = cart.map((element) => element.quantity);
-    console.log(totalAmount)
-    totalAmount.length >= 1 ? setCartQty(totalAmount.reduce((a, b) => a + b)) : setCartQty(0)
-    setItemCountStatus(true) 
+    console.log(totalAmount);
+    totalAmount.length >= 1
+      ? setCartQty(totalAmount.reduce((a, b) => a + b))
+      : setCartQty(0);
+    setItemCountStatus(true);
+  };
+
+  const calculateTotalPrice = () => {
+    const totalCashCalculation = cart.map(
+      (element) => element.quantity * element.price
+    );
+    console.log(totalCashCalculation);
+    totalCashCalculation.length >= 1
+      ? setTotalCash(totalCashCalculation.reduce((a, b) => a + b))
+      : setTotalCash(0);
   };
 
   return (
@@ -80,12 +94,14 @@ export const CartProvider = ({ children }) => {
         cart,
         cartQty,
         itemCountStatus,
+        totalCash,
         displayItemCount,
         addItem,
         removeItem,
         clearItems,
         isItemInCart,
         updateCartQty,
+        calculateTotalPrice,
       }}
     >
       {children}

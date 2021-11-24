@@ -1,21 +1,22 @@
 import { useState, useEffect } from "react";
-import { productsList } from "../products";
 import { ItemDetail } from "./ItemDetail";
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+import { useDatabase } from "../context/DatabaseContext";
 
 export const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
 
+  const database = useDatabase();
+
+  console.log(database.stock);
+
   const { itemId } = useParams();
 
   useEffect(() => {
-    const numberedItemId = Number(itemId);
-    const filtered = productsList.filter(
-      (product) => product.id === numberedItemId
-    );
+    const filtered = database.stock.filter((product) => product.id === itemId);
     setProduct(filtered[0]);
-  }, [itemId, product]);
+  }, [itemId, database.stock]);
 
   return (
     <>

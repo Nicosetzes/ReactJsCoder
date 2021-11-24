@@ -66,52 +66,56 @@
 }
 
 .container__cart .cont__form {
-    justify-content: center;
     align-self: flex-start;
     background-color: #bcf7ff;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     height: 300px;
     margin: 0 auto;
     padding: 0.75rem;
 }
 
-.container__cart .cont__form form {
+.cont__form .totalPrice {
+    display: flex;
+    margin: .75rem auto;
+}
+
+.cont__form form {
     background-color: #72756c;
     width: 100%;
 }
 
-.container__cart .cont__form form .form-row {
+.cont__form form .form-row {
     align-items: center;
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
 
-.container__cart .cont__form form .form-row input {
+.cont__form form .form-row input {
     margin: 0.75rem 0.5rem;
     padding: 0.25rem;
     width: 40%;
 }
 
+.emptyCart {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+}
 
-/* .container__cart button {
-    background-color: #becfca;
-    border: 0;
-    border-radius: 5px;
+.emptyCart button {
+    border: purple 1px solid;
     cursor: pointer;
-    margin: 0 1rem;
-    padding: 1em 2em;
-    width: 10em;
-} */
+    margin: 0 .25rem;
+    padding: .5rem .75rem;
+    width: 25%;
+}
 
-/* .container__cart button a {
-    color: #000;
-} */
-
-/* .container__cart span {
+.emptyCart span {
     color: #fff;
-    font-style: normal;
-    font-weight: 400;
-    text-decoration: none;
-} */
+    margin: 3rem auto;
+}

@@ -12,7 +12,7 @@ export const productsList = [
     condition: "Usado",
     stock: 20,
     description:
-      "Britannia, amenazada por la caída del Imperio romano y por el avance de los bárbaros, ve nacer la leyenda artúrica a través de la historia real del rey Artorius",
+      "Britannia, amenazada por la caída del Imperio romano y por el avance de los bárbaros, ve nacer la leyenda artúrica a través de la historia real del rey Artorius.",
     price: 400,
     image: artoriusImage,
     alt: "Artorius",

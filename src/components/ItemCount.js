@@ -11,7 +11,6 @@ export const ItemCount = ({
   displayItemCount,
   removeItem,
 }) => {
-
   if (itemCountStatus === true) {
     return (
       <>
@@ -27,7 +26,7 @@ export const ItemCount = ({
     return (
       <>
         <button>
-          <Link to={`/cart`}>Ir al carrito</Link>
+          <Link to={`/cart`}>Finalizar compra</Link>
         </button>
         <button onClick={() => removeItem(item)}>
           Eliminar producto del carrito

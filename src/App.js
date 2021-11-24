@@ -4,13 +4,13 @@ import { ItemListContainer } from "./components/ItemListContainer";
 import { ItemDetailContainer } from "./components/ItemDetailContainer";
 import { Cart } from "./components/Cart";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { DatabaseProvider } from "./context/DatabaseContext";
 import { CartProvider } from "./context/CartContext";
-import { CounterProvider } from "./context/CounterContext";
 
 function App() {
   return (
     <BrowserRouter>
-      <CounterProvider>
+      <DatabaseProvider>
         <CartProvider>
           <div className="App">
             <header className="App-header">
@@ -23,7 +23,6 @@ function App() {
               <Route exact path="/category/:categoryId">
                 <ItemListContainer greeting="JSX" />
               </Route>
-
               <Route exact path="/item/:itemId">
                 <ItemDetailContainer />
               </Route>
@@ -33,7 +32,7 @@ function App() {
             </Switch>
           </div>
         </CartProvider>
-      </CounterProvider>
+      </DatabaseProvider>
     </BrowserRouter>
   );
 }
