@@ -8,10 +8,10 @@ export const ItemCount = ({
   add,
   remove,
   itemCountStatus,
-  displayItemCount,
+  isItemInCart,
   removeItem,
 }) => {
-  if (itemCountStatus === true) {
+  if (itemCountStatus || (!itemCountStatus && !isItemInCart)) {
     return (
       <>
         <div className="cont__bottom-counter">
@@ -31,7 +31,6 @@ export const ItemCount = ({
         <button onClick={() => removeItem(item)}>
           Eliminar producto del carrito
         </button>
-        <button onClick={() => displayItemCount()}>Seguir comprando</button>
       </>
     );
   }

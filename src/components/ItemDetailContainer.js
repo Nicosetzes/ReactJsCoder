@@ -12,15 +12,13 @@ export const ItemDetailContainer = () => {
   const { itemId } = useParams();
 
   useEffect(() => {
-    const filtered = database.stock.filter((product) => product.id === itemId);
-    setProduct(filtered[0]);
-  }, [itemId, database.stock]);
+    if (database.stock !== null) {
+      const filtered = database.stock.filter(
+        (product) => product.id === itemId
+      );
+      setProduct(filtered[0]);
+    }
+  }, [itemId, database]);
 
-  return (
-    <>
-      <div className="itemDetailContainer">
-        {product && <ItemDetail item={product} key={product.id} />}
-      </div>
-    </>
-  );
+  return <>{product && <ItemDetail item={product} key={product.id} />}</>;
 };

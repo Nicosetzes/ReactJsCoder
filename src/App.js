@@ -13,12 +13,15 @@ function App() {
       <DatabaseProvider>
         <CartProvider>
           <div className="App">
-            <header className="App-header">
+            <header>
               <NavBar />
             </header>
             <Switch>
               <Route exact path="/">
                 <ItemListContainer greeting="JSX" />
+              </Route>
+              <Route exact path="/cart">
+                <Cart />
               </Route>
               <Route exact path="/category/:categoryId">
                 <ItemListContainer greeting="JSX" />
@@ -26,8 +29,8 @@ function App() {
               <Route exact path="/item/:itemId">
                 <ItemDetailContainer />
               </Route>
-              <Route exact path="/cart">
-                <Cart />
+              <Route path="/*">
+                <h1>La página solicitada no existe, inténtelo nuevamente...</h1>
               </Route>
             </Switch>
           </div>

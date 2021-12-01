@@ -13,7 +13,7 @@ ul {
 }
 
 .App {
-  background-color: #282c34;
+  background-color: #d4e2ff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,6 +29,14 @@ ul {
 
 .bold {
   font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
 
 main {

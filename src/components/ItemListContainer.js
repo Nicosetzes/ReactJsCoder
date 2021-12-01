@@ -7,7 +7,6 @@ export const ItemListContainer = () => {
   const database = useDatabase();
 
   const { categoryId } = useParams();
-
   if (!categoryId) {
     return (
       <>

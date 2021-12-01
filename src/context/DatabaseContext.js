@@ -10,8 +10,8 @@ export const DatabaseProvider = ({ children }) => {
   const [stock, setStock] = useState(null);
 
   useEffect(() => {
-    const dataBase = getFirestore();
-    const q = query(collection(dataBase, "products"));
+    const database = getFirestore();
+    const q = query(collection(database, "products"));
     getDocs(q).then((snapshot) => {
       setStock(
         snapshot.docs.map((doc) => {

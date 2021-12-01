@@ -32,6 +32,7 @@ export const Cart = () => {
 
   const placeOrder = (evt) => {
     evt.preventDefault();
+    const date = new Date();
     const order = {
       buyer: {
         name: formFields.userName,
@@ -40,17 +41,21 @@ export const Cart = () => {
         email: formFields.userEmail,
       },
       items: { cart: cart.cart, total: cart.totalCash },
+      date: {
+        date: date.toLocaleDateString(),
+        time: date.toLocaleTimeString(),
+      },
     };
 
-    const dataBase = getFirestore();
+    const database = getFirestore();
 
-    const ordersCollection = collection(dataBase, "orders");
+    const ordersCollection = collection(database, "orders");
 
     addDoc(ordersCollection, order).then(({ id }) => setPurchaseId(id));
 
     showModal();
 
-    updateStocksFromFirebase(dataBase, cart.cart);
+    updateStocksFromFirebase(database, cart.cart);
   };
 
   const updateStocksFromFirebase = (dataBase, cart) => {
@@ -91,6 +96,9 @@ export const Cart = () => {
                   </div>
                   <div className="products-description">
                     <h3>{product.title}</h3>
+                    <span className={`${product.className}`}>
+                      Stock: {product.stock}
+                    </span>
                     <span className="products-description-total">
                       Total: ${product.quantity * product.price}
                     </span>
@@ -151,8 +159,8 @@ export const Cart = () => {
         </div>
         <div id="modalContainerSuccess" className="modalContainer">
           <div className="modal">
-            <p>
-              <span className="modalTitle bold">Resumen de su compra</span>:
+            <p className="modalTitle">
+              <span className="bold">Resumen de su compra</span>:
             </p>
             <p>
               Nombre y apellido:{" "}
@@ -161,6 +169,10 @@ export const Cart = () => {
               </span>
             </p>
             <p>
+              Monto total abonado:{" "}
+              <span className="bold">${cart.totalCash}</span>
+            </p>
+            <span>
               Productos comprados:{" "}
               <ul>
                 {cart.cart.map((product, index) => (
@@ -170,11 +182,7 @@ export const Cart = () => {
                   </li>
                 ))}
               </ul>
-            </p>
-            <p>
-              Monto total abonado:{" "}
-              <span className="bold">${cart.totalCash}</span>
-            </p>
+            </span>
             <p>
               {purchaseId ? (
                 <span>
