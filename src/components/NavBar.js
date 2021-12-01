@@ -1,40 +1,37 @@
 import { CartWidget } from "./CartWidget";
 import { Link } from "react-router-dom";
 import { HamburgerMenu } from "./HamburgerMenu";
-// import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./NavBar.css";
 
 export const NavBar = () => {
+  const [catMenuClass, setCatMenuClass] = useState("navBar");
+
   const toggleMenu = () => {
-    const nav = document.getElementById("nav");
-    nav.classList.toggle("show");
+    catMenuClass === "navBar"
+      ? setCatMenuClass("navBar show")
+      : setCatMenuClass("navBar");
   };
 
   const closeMenu = () => {
-    const nav = document.getElementById("nav");
-    nav.classList.remove("show");
+    setCatMenuClass("navBar");
   };
 
-  // TO DO: REPASAR CLASE DE EVENTOS EN REACT, PARA AGREGAR UN EVENT LISTENER QUE ME PERMITE EJECUTAR closeMenu()
+  useEffect(() => {
+    window.addEventListener("resize", closeMenu);
+    return () => {
+      window.removeEventListener("resize", closeMenu);
+    };
+  }, []);
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth >= 992) {
-      const nav = document.getElementById("nav");
-      nav.classList.remove("show");
+  useEffect(() => {
+    if (catMenuClass === "navBar show") {
+      window.addEventListener("click", closeMenu);
+      return () => {
+        window.removeEventListener("click", closeMenu);
+      };
     }
-  });
-
-  // TO DO: REPASAR CLASE DE EVENTOS EN REACT, PARA AGREGAR UN WINDOW LISTENER QUE ME PERMITA CERRAR EL MENU AL CAMBIAR EL TAMAÑO DE LA PANTALLA
-
-  // useEffect(() => {
-  //   // initiate the event handler
-  //   window.addEventListener(event, handler, passive);
-
-  //   // this will clean up the event every time the component is re-rendered
-  //   return function cleanup() {
-  //     window.removeEventListener(event, handler);
-  //   };
-  // });
+  }, [catMenuClass]);
 
   return (
     <>
@@ -42,7 +39,7 @@ export const NavBar = () => {
         <Link to={`/`}>Logo</Link>
       </div>
       <HamburgerMenu toggleMenu={toggleMenu} />
-      <nav id="nav" className="navBar">
+      <nav id="nav" className={catMenuClass}>
         <ul id="nav__list" className="nav__list">
           <li className="nav__list-option">
             <Link to={`/`}>Inicio</Link>
