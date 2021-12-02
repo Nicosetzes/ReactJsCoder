@@ -36,7 +36,7 @@ export const NavBar = () => {
   return (
     <>
       <div className="nav__img">
-        <Link to={`/`}>Logo</Link>
+        <Link to={`/`}>Libros del mar</Link>
       </div>
       <HamburgerMenu toggleMenu={toggleMenu} />
       <nav id="nav" className={catMenuClass}>
@@ -45,10 +45,16 @@ export const NavBar = () => {
             <Link to={`/`}>Inicio</Link>
           </li>
           <li className="nav__list-option">
-            <Link to={`/category/policial`}>Policial</Link>
+            <Link to={`/category/ciencia`}>Ciencia</Link>
+          </li>
+          <li className="nav__list-option">
+            <Link to={`/category/fantastico`}>Fantástico</Link>
           </li>
           <li className="nav__list-option">
             <Link to={`/category/historia`}>Historia</Link>
+          </li>
+          <li className="nav__list-option">
+            <Link to={`/category/policial`}>Policial</Link>
           </li>
         </ul>
       </nav>

@@ -43,6 +43,7 @@ export const CartCount = ({ item }) => {
 
   const removeItemFromCounter = () => {
     let index = cart.cart.findIndex((element) => element.id === item.id);
+    alert("¿Seguro desea eliminar el producto del carrito?");
     cart.cart.splice(index, 1);
     cart.updateCartTotalQty();
   };

@@ -19,7 +19,7 @@ export const ItemListContainer = () => {
         {database.stock && (
           <ItemList
             items={database.stock.filter(
-              (element) => element.category === categoryId
+              (element) => element.category.toLowerCase() === categoryId
             )}
           />
         )}

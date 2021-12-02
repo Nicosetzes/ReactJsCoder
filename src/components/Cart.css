@@ -113,6 +113,7 @@
         flex-direction: column;
         height: 500px;
         justify-content: center;
+        margin: 3rem auto auto auto;
         padding-top: 150px;
         width: 100%;
     }
@@ -120,13 +121,14 @@
     .emptyCart button {
         border: purple 1px solid;
         cursor: pointer;
-        margin: 0 .25rem;
+        margin: 1rem 0;
         padding: .5rem .75rem;
-        width: 25%;
+        width: 125px;
     }
 
     .emptyCart span {
-        color: #fff;
+        color: rgb(17, 78, 78);
+        font-weight: bold;
     }
     .modalContainer {
         align-items: center;
@@ -152,7 +154,7 @@
         background-color: #fff;
         border: #138a64 3px solid;
         border-radius: 5px;
-        max-width: 40%;
+        max-width: 90%;
         padding: 2rem 4.25rem;
         text-align: center;
     }   

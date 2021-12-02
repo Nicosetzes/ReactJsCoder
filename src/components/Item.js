@@ -7,6 +7,7 @@ export const Item = ({ item }) => {
       <h3>{item.title}</h3>
       <img alt={item.alt} src={item.image} />
       <span>Editorial: {item.publisher}</span>
+      <span>Condición: {item.condition}</span>
       <span>${item.price}</span>
       <button>
         <Link to={`/item/${item.id}`}>Ver detalles del producto</Link>

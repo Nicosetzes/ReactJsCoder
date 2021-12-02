@@ -7,8 +7,10 @@
         font-size: 1.25rem;
         justify-content: center;
         margin: 1.5em 0.5rem;
-        outline: red 1px solid;
-        padding: 0.5rem 0;
+        max-width: 400px;
+        outline: rgb(255, 83, 83) 1px solid;
+        padding: 1.5rem 0;
+        width: 80%;
     }
 
     .itemBody button {
@@ -31,11 +33,12 @@
         font-size: 1.5rem;
         font-weight: bold;
         margin: 0 0 1em 0;
+        text-align: center;
     }
 
     .itemBody span {
         color: #000;
-        margin: 0;
+        margin: .5rem 0;
     }
 
     .itemBody p {
@@ -44,7 +47,21 @@
     }
 
     .itemBody img {
-        width: 80%;
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .itemBody {
+        font-size: 1.5rem;
+        width: 400px;
+    }
+    .itemBody img {
+        max-height: 375px;
+        max-width: 300px;
+    }
+    .itemBody h3 {
+        text-align: left;
     }
 }
 

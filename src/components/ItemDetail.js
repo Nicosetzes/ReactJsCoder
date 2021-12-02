@@ -11,7 +11,7 @@ export const ItemDetail = ({ item }) => {
 
   const cartElementQty = cart.cartElementQty;
 
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
   const stockSpan = document.getElementById("stockSpan");
 
@@ -24,7 +24,7 @@ export const ItemDetail = ({ item }) => {
   };
 
   const remove = () => {
-    if (count > 1) {
+    if (count > 0) {
       stockSpan.classList.remove("alert");
       setCount(count - 1);
     }
@@ -46,12 +46,18 @@ export const ItemDetail = ({ item }) => {
         </div>
         <div className="cont__second">
           <div className="cont__top">
-            <span className="publisher">Editorial: {item.publisher}</span>
-            <span className="condition">Estado: {item.condition}</span>
-            <span id="stockSpan" className="stock">
-              Stock: {item.stock}
+            <span>
+              Editorial: <span className="bold">{item.publisher}</span>
             </span>
-            <span className="price">${item.price}</span>
+            <span>
+              Estado: <span className="bold">{item.condition}</span>
+            </span>
+            <span id="stockSpan">
+              Stock: <span className="bold">{item.stock}</span>
+            </span>
+            <span className="bold">
+              <span>${item.price}</span>
+            </span>
           </div>
           <div className="cont__bottom">
             <ItemCount
@@ -92,12 +98,18 @@ export const ItemDetail = ({ item }) => {
               ?
             </p>
           </div>
-          <div className="cont__top" id="cont__top">
-            <span className="publisher">Editorial: {item.publisher}</span>
-            <span className="condition">Estado: {item.condition}</span>
-            <span className="price">${item.price}</span>
-            <span id="stockSpan" className="stock">
-              Stock: {item.stock}
+          <div className="cont__top">
+            <span>
+              Editorial: <span className="bold">{item.publisher}</span>
+            </span>
+            <span>
+              Estado: <span className="bold">{item.condition}</span>
+            </span>
+            <span id="stockSpan">
+              Stock: <span className="bold">{item.stock}</span>
+            </span>
+            <span className="bold">
+              <span>${item.price}</span>
             </span>
           </div>
           <div className="cont__bottom">

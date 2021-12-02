@@ -24,6 +24,10 @@ export const CartProvider = ({ children }) => {
   };
 
   const addItem = (item, quantity) => {
+    if (quantity === 0) {
+      console.log("No puedes agregar 0 productos");
+      return;
+    }
     const productToAdd = { ...item, quantity: quantity };
     const productFoundArray = cart.filter((element) => element.id === item.id);
 
@@ -40,7 +44,6 @@ export const CartProvider = ({ children }) => {
       } else {
         console.log("No se debería agregar al carrito");
         const stockSpan = document.getElementById("stockSpan");
-        console.log(stockSpan);
         stockSpan.classList.add("alert");
       }
     } // PREGUNTAR ACERCA DE ESTA LÓGICA. FUNCIONA, PERO NO ESPERABA QUE FUNCIONE SIN UN PASO EXTRA.
