@@ -1,10 +1,11 @@
-import "./Cart.css";
-import { useCart } from "../context/CartContext";
-import { CartCount } from "./CartCount";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { BeatLoader } from "react-spinners";
+import { CartProduct } from "./CartProduct";
+import { useCart } from "../context/CartContext";
 import { getFirestore } from "../firebase";
 import { collection, doc, addDoc, writeBatch } from "firebase/firestore";
+import "./Cart.css";
 
 export const Cart = () => {
   const showModal = () => {
@@ -88,26 +89,8 @@ export const Cart = () => {
       <div className="container__cart">
         <div className="cont__products">
           {cart.cart &&
-            cart.cart.map((product) => {
-              return (
-                <div className="cart__products" key={product.id}>
-                  <div className="products-img">
-                    <img src={product.image} alt={product.alt} />
-                  </div>
-                  <div className="products-description">
-                    <h3>{product.title}</h3>
-                    <span className={`${product.className}`}>
-                      Stock: {product.stock}
-                    </span>
-                    <span className="products-description-total">
-                      Total: ${product.quantity * product.price}
-                    </span>
-                    <div className="products-description__quantity">
-                      Cantidad: <CartCount item={product} />
-                    </div>
-                  </div>
-                </div>
-              );
+            cart.cart.map((product, index) => {
+              return <CartProduct item={product} key={index} />;
             })}
         </div>
 
@@ -190,9 +173,7 @@ export const Cart = () => {
                   <span className="bold">{purchaseId}</span>
                 </span>
               ) : (
-                <span className="bold">
-                  Aguarde mientras se genera el número de orden...
-                </span>
+                <BeatLoader color={"green"} />
               )}
             </p>
             <button className="modalClose" onClick={closeModal}>
@@ -207,9 +188,9 @@ export const Cart = () => {
       <>
         <div className="emptyCart">
           <span>¡El carrito está vacío!</span>
-          <button>
-            <Link to={"/"}>Volver al home</Link>
-          </button>
+          <Link to={"/"}>
+            <button>Volver al home</button>
+          </Link>
         </div>
       </>
     );

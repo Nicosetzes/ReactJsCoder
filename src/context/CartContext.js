@@ -24,10 +24,6 @@ export const CartProvider = ({ children }) => {
   };
 
   const addItem = (item, quantity) => {
-    if (quantity === 0) {
-      console.log("No puedes agregar 0 productos");
-      return;
-    }
     const productToAdd = { ...item, quantity: quantity };
     const productFoundArray = cart.filter((element) => element.id === item.id);
 
@@ -36,13 +32,11 @@ export const CartProvider = ({ children }) => {
       hideItemCount();
     } else {
       if (productFoundArray[0].quantity + quantity <= item.stock) {
-        console.log("Se va a agregar al carrito");
         productFoundArray[0].quantity += quantity;
         const auxCart = [...cart];
         setCart(auxCart);
         hideItemCount();
       } else {
-        console.log("No se debería agregar al carrito");
         const stockSpan = document.getElementById("stockSpan");
         stockSpan.classList.add("alert");
       }
@@ -55,7 +49,6 @@ export const CartProvider = ({ children }) => {
     if (cartFiltered.length === 0) {
       setCartTotalQty(0);
     } // Con esta linea puedo resetear a 0 la cantidad de productos cuando elimino el único producto que se encontraba en el carrito
-    // displayItemCount();
   };
 
   useEffect(() => {

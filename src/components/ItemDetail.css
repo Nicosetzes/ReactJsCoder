@@ -103,12 +103,11 @@
         text-decoration: none;
     }
 
-    .cont__second .cont__top span.alert {
+    .cont__second .cont__top .alert {
         color: red;
         font-weight: bold;
     }
 }
-
 
 @media only screen and (min-width: 576px) {
 

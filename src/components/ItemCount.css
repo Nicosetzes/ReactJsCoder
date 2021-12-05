@@ -8,6 +8,11 @@
     padding: 1em 1em;
 }
 
+.cont__bottom button:disabled {
+    cursor: auto;
+    outline: rgb(240, 135, 240) 2px solid;
+}
+
 .cont__bottom .cont__bottom-counter {
     align-items: center;
     display: flex;
@@ -26,6 +31,11 @@
     margin: 0 1rem;
     outline: purple 2px solid;
     padding: 1em 1em;
+}
+
+.cont__bottom .cont__bottom-counter button:disabled {
+    cursor: auto;
+    outline: rgb(240, 135, 240) 2px solid;
 }
 
 .cont__bottom .cont__bottom-counter span {

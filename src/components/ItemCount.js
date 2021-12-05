@@ -1,5 +1,5 @@
-import "./ItemCount.css";
 import { Link } from "react-router-dom";
+import "./ItemCount.css";
 
 export const ItemCount = ({
   onAdd,
@@ -15,19 +15,23 @@ export const ItemCount = ({
     return (
       <>
         <div className="cont__bottom-counter">
-          <button onClick={remove}>-</button>
+          <button onClick={remove} disabled={count === 0}>
+            -
+          </button>
           <span>{count}</span>
           <button onClick={add}>+</button>
         </div>
-        <button onClick={() => onAdd(item, count)}>Agregar al carrito</button>
+        <button onClick={() => onAdd(item, count)} disabled={count === 0}>
+          Agregar al carrito
+        </button>
       </>
     );
   } else {
     return (
       <>
-        <button>
-          <Link to={`/cart`}>Finalizar compra</Link>
-        </button>
+        <Link to={`/cart`}>
+          <button>Finalizar compra</button>
+        </Link>
         <button onClick={() => removeItem(item)}>
           Eliminar producto del carrito
         </button>

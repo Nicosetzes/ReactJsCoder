@@ -52,16 +52,14 @@
         justify-content: center;
     }
     .products-description .products-description__quantity button {
-        border: purple 1px solid;
+        border: purple 2px solid;
         cursor: pointer;
         margin: 0 .25rem;
         padding: .5rem .75rem;
     }
-    .products-description .products-description__quantity button:nth-child(1) {
-        border: purple 1px solid;
-        cursor: pointer;
-        margin: 0 .25rem;
-        padding: .5rem .75rem;
+    .products-description .products-description__quantity button:disabled {
+        border: rgb(240, 135, 240) 2px solid;
+        cursor: auto;
     }
     .container__cart .cont__form {
         align-self: flex-start;
@@ -94,13 +92,9 @@
         width: 25%;
     }
     .cont__form form button:disabled {
-        background-color: #fff;
         border: rgb(241, 167, 241) 1px solid;
         color: rgb(192, 192, 192);
-        cursor: pointer;
-        margin: .5rem auto;
-        padding: .5rem .75rem;
-        width: 25%;
+        cursor: auto;
     }
     .cont__form form .form-row input {
         margin: 0.75rem 0.5rem;
@@ -144,12 +138,12 @@
         transition: opacity 100ms ease-in-out;
         width: 100vw;
     }
-
     .modalContainer.show {
         pointer-events: auto;
         opacity: 1;
+        overflow: scroll;
+        z-index: 1000;
     }
-
     .modalContainer .modal {
         background-color: #fff;
         border: #138a64 3px solid;
@@ -158,31 +152,27 @@
         padding: 2rem 4.25rem;
         text-align: center;
     }   
-
     .modal li {
+        font-size: 1.25rem;
         margin: 0.75rem 0;
     }
-
     .modal p {
         font-size: 1rem;
         margin: 1.25rem 0;
         opacity: 0.8;
     }
-
     .modal img  {
         margin: 0 0 0.75em 0;
     }
-    
     .modal button {
         background-color: #138a64;
         border: 0;
         border-radius: 5px;
         color: #fff;
         cursor: pointer;
-        margin: 0.5em 0 0 0;
+        margin: 0.5rem 1rem;
         padding: 1em 2em;        
     }
-
     .modal .modalTitle {
         font-size: 1.5rem;
         margin-top: 0;
@@ -202,6 +192,7 @@
     .container__cart .cont__products {
         display: flex;
         flex-direction: row;
+        justify-content: center;
     }
 }
 
@@ -249,6 +240,54 @@
     }
     .products-description .products-description__quantity {
         flex-wrap: wrap;
+    }
+    .modalContainer {
+        flex-direction: row;
+    }
+    .modalContainer.show {
+        pointer-events: auto;
+        opacity: 1;
+        z-index: 1000;
+    }
+    .modalContainer .modal {
+        background-color: #fff;
+        border: #138a64 3px solid;
+        border-radius: 5px;
+        width: 90%;
+        padding: 2rem 4.25rem;
+        text-align: center;
+    }   
+    .modal ul {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .modal li {
+        border:rgb(17, 78, 78) 1px solid;
+        font-size: 1rem;
+        margin: 0.75rem 1rem;
+        padding: .75rem;
+    }
+    .modal p {
+        font-size: 1rem;
+        margin: 1.25rem 0;
+        opacity: 0.8;
+    }
+    .modal button {
+        background-color: #138a64;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        margin: 0.5rem 1rem;
+        padding: 1em 2em;        
+    }
+    .modal .modalTitle {
+        font-size: 1.5rem;
+        margin-top: 0;
+        text-decoration: underline;
     }
 }   
 

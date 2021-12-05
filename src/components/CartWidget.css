@@ -1,32 +1,35 @@
 @media only screen and (min-width: 300px) {
     .cartContainer {
         align-items: center;
-        background-color: #928a8a;
+        border-radius: 50%;
         display: flex;
         flex-direction: row;
-        height: 50px;
+        height: 75px;
         justify-content: space-between;
         margin: 0 1rem;
-        padding: 1rem;
         position: relative;
         width: 75px;
     }
     .cartContainer .cart {
-        height: 1.25em;
+        height: 2rem;
         left: 1rem;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        width: 1.25em;
+        width: 2rem;
     }
     .cartContainer span {
+        background-color: #000;
+        border-radius: 50%;
         color: #fff;
+        font-size: 1rem;
         font-style: normal;
         font-weight: bold;
+        padding: 0.25rem 0.5rem;
         position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+        left: 2.25rem;
+        top: 7.5%;
+        transform: translateY(-12.5%);
         text-decoration: none;
     }
 }
@@ -34,12 +37,7 @@
 @media only screen and (min-width: 768px) {
     .cartContainer {
         height: 75px;
-        justify-content: space-between;
         margin: 0 1rem 0 auto;
         width: 100px;
-    }
-    .cartContainer .cart {
-        height: 1.25em;
-        width: 1.25em;
     }
 }

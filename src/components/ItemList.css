@@ -1,13 +1,32 @@
-.itemListGroup {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 150px;
+@media only screen and (min-width: 300px) {
+    .itemListGroup {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-top: 150px;
+    }
+
+    .itemListGroup .emptyHome {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 5rem auto;
+    }
+
+    .emptyHome .loadingDiv {
+        color: #000;
+        font-size: 2rem;
+        padding: 2rem 1rem;
+        text-align: center;
+        width: 100%;
+    }
 }
 
-.itemListGroup h1 {
-    color: #fff;
-    margin: 3rem auto;
+@media only screen and (min-width: 992px) {
+    .itemListGroup {
+        flex-direction: row;
+    }
 }

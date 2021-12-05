@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 
-export const CartCount = ({ item }) => {
+export const CartCount = ({ item, func }) => {
   const cart = useCart();
 
   const [productQty, setProductQty] = useState(item.quantity);
@@ -41,21 +41,13 @@ export const CartCount = ({ item }) => {
     }
   };
 
-  const removeItemFromCounter = () => {
-    let index = cart.cart.findIndex((element) => element.id === item.id);
-    alert("¿Seguro desea eliminar el producto del carrito?");
-    cart.cart.splice(index, 1);
-    cart.updateCartTotalQty();
-  };
-
   return (
     <>
-      <button onClick={removeOnCart}>-</button>
+      <button onClick={removeOnCart} disabled={productQty === 1}>
+        -
+      </button>
       <span>{productQty}</span>
       <button onClick={addOnCart}>+</button>
-      <div>
-        <button onClick={removeItemFromCounter}>Eliminar del carrito</button>
-      </div>
     </>
   );
 };

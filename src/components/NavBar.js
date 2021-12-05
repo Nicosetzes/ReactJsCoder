@@ -1,7 +1,7 @@
-import { CartWidget } from "./CartWidget";
-import { Link } from "react-router-dom";
-import { HamburgerMenu } from "./HamburgerMenu";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { CartWidget } from "./CartWidget";
+import { HamburgerMenu } from "./HamburgerMenu";
 import "./NavBar.css";
 
 export const NavBar = () => {
@@ -52,6 +52,9 @@ export const NavBar = () => {
           </li>
           <li className="nav__list-option">
             <Link to={`/category/historia`}>Historia</Link>
+          </li>
+          <li className="nav__list-option">
+            <Link to={`/category/narrativa`}>Narrativa</Link>
           </li>
           <li className="nav__list-option">
             <Link to={`/category/policial`}>Policial</Link>

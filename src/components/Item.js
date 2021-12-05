@@ -9,9 +9,9 @@ export const Item = ({ item }) => {
       <span>Editorial: {item.publisher}</span>
       <span>Condición: {item.condition}</span>
       <span>${item.price}</span>
-      <button>
-        <Link to={`/item/${item.id}`}>Ver detalles del producto</Link>
-      </button>
+      <Link to={`/item/${item.id}`}>
+        <button>Ver detalles del producto</button>
+      </Link>
     </div>
   );
 };

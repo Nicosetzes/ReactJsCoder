@@ -1,10 +1,11 @@
-import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
-import { useDatabase } from "../context/DatabaseContext";
 import { ItemList } from "./ItemList";
+import { useDatabase } from "../context/DatabaseContext";
+import "./ItemListContainer.css";
 
 export const ItemListContainer = () => {
   const database = useDatabase();
+  console.log(database);
 
   const { categoryId } = useParams();
   if (!categoryId) {

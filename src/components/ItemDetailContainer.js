@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { ItemDetail } from "./ItemDetail";
-import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
+import { ItemDetail } from "./ItemDetail";
 import { useDatabase } from "../context/DatabaseContext";
+import "./ItemDetailContainer.css";
 
 export const ItemDetailContainer = () => {
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState();
 
   const database = useDatabase();
 

@@ -1,3 +1,4 @@
+import { ClipLoader } from "react-spinners";
 import { Item } from "./Item";
 import "./ItemList.css";
 
@@ -9,7 +10,12 @@ export const ItemList = ({ items }) => {
           return <Item item={element} key={element.id} />;
         })
       ) : (
-        <h1>Se están cargando los productos, aguarde...</h1>
+        <div className="emptyHome">
+          <div className="loadingDiv">
+            Se están cargando los productos, aguarde un momento...
+          </div>
+          <ClipLoader size={48} color={"green"} />
+        </div>
       )}
     </div>
   );
