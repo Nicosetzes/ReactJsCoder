@@ -20,7 +20,7 @@ export const DatabaseProvider = ({ children }) => {
         })
       );
     });
-  }, []); // NO AGREGAR STOCK AQUÍ! TE EXCEDE LA CUOTA DE TRANSFERENCIAS Y TE NIEGA EL ACCESO A LA BASE DE DATOS!
+  }, []); 
 
   return (
     <DatabaseContext.Provider

@@ -171,6 +171,7 @@
 @media only screen and (min-width: 1200px) {
     .itemDetail__container {
         flex-direction: row;
+        margin-bottom: 3rem;
         width: 95%;
     }
 
@@ -188,11 +189,12 @@
 
     .itemDetail__container .cont__first img {
         max-width: 350px;
-        width: 35%;
+        width: 30%;
     }
 
     .itemDetail__container .cont__first p {
-        width: 65%;
+        font-size: 1rem;
+        width: 60%;
     }
 
     .itemDetail__container .cont__second {

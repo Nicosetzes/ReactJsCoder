@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./ItemCount.css";
 
 export const ItemCount = ({
-  onAdd,
+  addItem,
   item,
   count,
   add,
@@ -21,7 +21,7 @@ export const ItemCount = ({
           <span>{count}</span>
           <button onClick={add}>+</button>
         </div>
-        <button onClick={() => onAdd(item, count)} disabled={count === 0}>
+        <button onClick={() => addItem(item, count)} disabled={count === 0}>
           Agregar al carrito
         </button>
       </>

@@ -40,7 +40,7 @@ export const CartProvider = ({ children }) => {
         const stockSpan = document.getElementById("stockSpan");
         stockSpan.classList.add("alert");
       }
-    } // PREGUNTAR ACERCA DE ESTA LÓGICA. FUNCIONA, PERO NO ESPERABA QUE FUNCIONE SIN UN PASO EXTRA.
+    } 
   };
 
   const removeItem = (item) => {
@@ -48,7 +48,7 @@ export const CartProvider = ({ children }) => {
     setCart(cartFiltered);
     if (cartFiltered.length === 0) {
       setCartTotalQty(0);
-    } // Con esta linea puedo resetear a 0 la cantidad de productos cuando elimino el único producto que se encontraba en el carrito
+    } 
   };
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export const CartProvider = ({ children }) => {
       const qty = cart.map((element) => element.quantity);
       setCartTotalQty(qty.reduce((a, b) => a + b));
     }
-  }, [cart]); // Si no lo hago en useEffect, produce unlimited RERENDERS. PREGUNTAR.
+  }, [cart]); 
 
   const clearItems = () => {
     setCart([]);
@@ -76,7 +76,6 @@ export const CartProvider = ({ children }) => {
     totalAmount.length >= 1
       ? setCartTotalQty(totalAmount.reduce((a, b) => a + b))
       : setCartTotalQty(0);
-    // setItemCountStatus(true);
   };
 
   const calculateCartElementQty = (item) => {

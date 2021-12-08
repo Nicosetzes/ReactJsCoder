@@ -85,7 +85,7 @@ export const ItemDetail = ({ item }) => {
               remove={remove}
               itemCountStatus={cart.itemCountStatus}
               isItemInCart={isItemInCart}
-              onAdd={cart.addItem}
+              addItem={cart.addItem}
               removeItem={cart.removeItem}
             />
             <Link to={"/"}>
