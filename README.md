@@ -9,3 +9,7 @@ Deployment: https://amazing-wright-07ff40.netlify.app
 # About me
 
 My name is Nicolás, I'm from Argentina and I'm a biologist. All my life I've enjoyed performing all sorts of activities in front of a computer, and currently I'm getting involved with programming. 
+
+# GIF
+
+![alt-text](https://github.com/Nicosetzes/ReactJsCoder/blob/main/src/media/ecommerce.gif)
