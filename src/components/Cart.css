@@ -40,9 +40,6 @@
         font-size: 1rem;
         margin: .5rem 0 1rem 0;
     }
-    .products-description .products-description-stock.alert {
-        color: red;
-    }
     .products-description .products-description__quantity {
         align-items: center;
         display: flex;
@@ -100,6 +97,16 @@
         margin: 0.75rem 0.5rem;
         padding: 0.25rem;
         width: 40%;
+    }
+    .cont__form form .form-row #stockProblem {
+        opacity: 0;
+        transition: opacity 200ms ease-in-out;
+    }
+    .cont__form form .form-row #stockProblem.show {
+        color: red;
+        font-weight: bold;
+        opacity: 1;
+        text-align: center;
     }
     .emptyCart {
         align-items: center;

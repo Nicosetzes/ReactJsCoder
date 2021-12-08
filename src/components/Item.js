@@ -9,6 +9,13 @@ export const Item = ({ item }) => {
       <span>Editorial: {item.publisher}</span>
       <span>Condición: {item.condition}</span>
       <span>${item.price}</span>
+      <span>
+        {item.stock === 0 ? (
+          <span className="alert">Agotado</span>
+        ) : (
+          <span>{`Disponible (${item.stock})`}</span>
+        )}
+      </span>
       <Link to={`/item/${item.id}`}>
         <button>Ver detalles del producto</button>
       </Link>

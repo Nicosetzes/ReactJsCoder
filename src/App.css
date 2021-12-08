@@ -12,6 +12,11 @@ ul {
     list-style: none;
 }
 
+.alert {
+  color: rgb(221, 40, 40);
+  font-weight: bold;
+}
+
 .App {
   background-color: #d4e2ff;
   min-height: 100vh;

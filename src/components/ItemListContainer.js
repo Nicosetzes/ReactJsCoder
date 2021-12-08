@@ -5,7 +5,6 @@ import "./ItemListContainer.css";
 
 export const ItemListContainer = () => {
   const database = useDatabase();
-  console.log(database);
 
   const { categoryId } = useParams();
   if (!categoryId) {

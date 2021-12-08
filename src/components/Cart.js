@@ -8,21 +8,6 @@ import { collection, doc, addDoc, writeBatch } from "firebase/firestore";
 import "./Cart.css";
 
 export const Cart = () => {
-  const showModal = () => {
-    const modalContainerSuccess = document.getElementById(
-      "modalContainerSuccess"
-    );
-    modalContainerSuccess.classList.add("show");
-  };
-
-  const closeModal = () => {
-    const modalContainerSuccess = document.getElementById(
-      "modalContainerSuccess"
-    );
-    modalContainerSuccess.classList.remove("show");
-    cart.clearItems();
-  };
-
   const cart = useCart();
 
   const [purchaseId, setPurchaseId] = useState(null);
@@ -33,6 +18,7 @@ export const Cart = () => {
 
   const placeOrder = (evt) => {
     evt.preventDefault();
+
     const date = new Date();
     const order = {
       buyer: {
@@ -48,26 +34,26 @@ export const Cart = () => {
       },
     };
 
-    const database = getFirestore();
+    const firestoreDatabase = getFirestore();
 
-    const ordersCollection = collection(database, "orders");
+    const ordersCollection = collection(firestoreDatabase, "orders");
 
     addDoc(ordersCollection, order).then(({ id }) => setPurchaseId(id));
 
     showModal();
 
-    updateStocksFromFirebase(database, cart.cart);
+    updateStocksFromFirebase(firestoreDatabase, cart.cart);
   };
 
-  const updateStocksFromFirebase = (dataBase, cart) => {
-    const batch = writeBatch(dataBase);
+  const updateStocksFromFirebase = (database, cart) => {
+    const batch = writeBatch(database);
 
     const itemIdsAndNewStock = cart.map((element) => {
       return { id: element.id, newStock: element.stock - element.quantity };
     });
 
     itemIdsAndNewStock.forEach((item) => {
-      const docRef = doc(dataBase, "products", item.id);
+      const docRef = doc(database, "products", item.id);
       batch.update(docRef, { stock: item.newStock });
     });
     batch.commit();
@@ -82,6 +68,21 @@ export const Cart = () => {
 
   const handleChange = (evt) => {
     setFormFields({ ...formFields, [evt.target.name]: evt.target.value });
+  };
+
+  const showModal = () => {
+    const modalContainerSuccess = document.getElementById(
+      "modalContainerSuccess"
+    );
+    modalContainerSuccess.classList.add("show");
+  };
+
+  const closeModal = () => {
+    const modalContainerSuccess = document.getElementById(
+      "modalContainerSuccess"
+    );
+    modalContainerSuccess.classList.remove("show");
+    cart.clearItems();
   };
 
   if (cart.cart.length) {
@@ -113,13 +114,13 @@ export const Cart = () => {
             </div>
             <div className="form-row">
               <input
-                type="text"
+                type="number"
                 placeholder="Teléfono"
                 name="userPhone"
                 onChange={handleChange}
               />
               <input
-                type="text"
+                type="email"
                 placeholder="E-mail"
                 name="userEmail"
                 onChange={handleChange}

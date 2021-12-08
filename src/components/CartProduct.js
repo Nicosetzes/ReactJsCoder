@@ -8,7 +8,6 @@ export const CartProduct = ({ item }) => {
 
   const removeItemFromCounter = () => {
     let index = cart.cart.findIndex((element) => element.id === item.id);
-    console.log(index);
     cart.cart.splice(index, 1);
     cart.updateCartTotalQty();
     toggleModal();
@@ -18,7 +17,6 @@ export const CartProduct = ({ item }) => {
 
   const toggleModal = () => {
     setShowModal(!showModal);
-    console.log(showModal);
   };
 
   return (

@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAYuEO8iR5gJXfr99iGZkuoFpWBe4_kXx4",
-  authDomain: "setzes-ecommerce.firebaseapp.com",
-  projectId: "setzes-ecommerce",
-  storageBucket: "setzes-ecommerce.appspot.com",
-  messagingSenderId: "470904018720",
-  appId: "1:470904018720:web:8fd9769c7b6451fa06a945",
+  apiKey: "AIzaSyAQzmO8T37H9gvYgPKlY_qM8VNYez5R48w",
+  authDomain: "react-ecommerce-setzes.firebaseapp.com",
+  projectId: "react-ecommerce-setzes",
+  storageBucket: "react-ecommerce-setzes.appspot.com",
+  messagingSenderId: "268408151501",
+  appId: "1:268408151501:web:c74c29753dfe4bf38ef884",
 };
 
 const app = initializeApp(firebaseConfig);

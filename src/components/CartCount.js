@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 
-export const CartCount = ({ item, func }) => {
+export const CartCount = ({ item }) => {
   const cart = useCart();
 
   const [productQty, setProductQty] = useState(item.quantity);
